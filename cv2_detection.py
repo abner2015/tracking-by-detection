@@ -1,3 +1,4 @@
+# code from https://blog.csdn.net/xiao__run/article/details/81084209
 import cv2
 import sys
 
@@ -29,7 +30,7 @@ if __name__ == '__main__' :
             tracker = cv2.TrackerGOTURN_create()
 
     # Read video
-    video = cv2.VideoCapture("videos/chaplin.mp4")
+    video = cv2.VideoCapture("videos/bb.mp4")
 
     # Exit if video not opened.
     if not video.isOpened():
@@ -59,7 +60,7 @@ if __name__ == '__main__' :
 
         # Start timer
         timer = cv2.getTickCount()
-
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         # Update tracker
         ok, bbox = tracker.update(frame)
 
